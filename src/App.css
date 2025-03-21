@@ -1,0 +1,266 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+ 
+}
+
+.card {
+  background-color:rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 4px 4px 25px gray;
+  padding: 30px;
+  width: 500px;
+  text-align: center;
+  padding: 5px solid white;
+  transition: all 2s;
+}
+.card:hover{
+
+  color:#dc3545;
+  
+}
+
+.app-title {
+  font-weight: bold;
+  background: linear-gradient(to right, #0000ff, #00ffff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: dotted;
+  text-shadow: 1px 1px rgba(0, 0, 255, 0.6), 
+  1px 1px rgba(0, 255, 255, 0.6);
+  transition: text-shadow 3s;
+}
+.app-title{
+ text-shadow: none;
+}
+/* .app-title:before {
+  position: absolute;
+  top: 120px;
+  content: "";
+  width: 27%;
+  height: 5px;
+  background-color:#33ccff ;
+  border-radius: 10px;
+} */
+ .main{
+  background-image: url('./Designer.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+ }
+.app-title:hover{
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+.input-label {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+.salary-input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 95%;
+  margin-bottom: 20px;
+  text-align: center;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.salary-display {
+  font-size: 20px;
+  font-weight: bold;
+  color: #85bb65;
+  margin-top: 20px;
+  text-shadow: 1px 2px green;
+}
+input::placeholder {
+  text-transform: capitalize;
+  transition: color 3s;
+}
+input::placeholder:hover{
+  color:blue;
+}
+/* Expense Section */
+.expense-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Expense List */
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Expense Item */
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+.expense-detail {
+  display: flex;
+  gap: 15px;
+  flex: 1;
+}
+
+.expense-description,
+.expense-amount,
+.expense-category,
+.expense-date {
+  font-size: 16px;
+  color: #333;
+  min-width: 100px;
+}
+
+.expense-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .expense-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expense-detail {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expense-description,
+  .expense-amount,
+  .expense-category,
+  .expense-date {
+    min-width: unset;
+  }
+
+  .expense-actions {
+    margin-top: 10px;
+  }
+}
+.enter-button {
+  width: 150px;
+  height: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(
+    to right,
+    #4caf50,
+    #2196f3
+  ); /* Gradient Background */
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.enter-button:hover {
+  transform: translateY(-5px); /* Lift the button on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.enter-button:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15);
+  transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.enter-button:hover:after {
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+}
+
+.enter-button:active {
+  transform: translateY(2px); /* Slightly depress the button when clicked */
+}
+.error-message {
+  color: red;
+}
+@media (max-width: 480px) {
+  .card {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.swal2-popup {
+  width: 300px; /* Adjust width */
+  font-size: 14px; /* Adjust font size */
+}
